@@ -3,16 +3,20 @@ from pathlib import Path
 import os
 import subprocess
 
+# Import setup_llama_cpp
+from setup_llama_cpp import SetupLLamaCpp
+
 class ConvertAndQuantize:
     def __init__(self, model_path):
         self.model_path = model_path
         self.gguf_dir = Path(model_path).parent / "gguf"
         self.gguf_dir.mkdir(exist_ok=True)
+        self.llama_cpp = SetupLLamaCpp()
 
     def convert_to_gguf(self, unet_path, setup_llama_cpp=True):
         """Convert UNet to GGUF format"""
         if setup_llama_cpp:
-            self.setup_llama_cpp()
+            self.llama_cpp.setup_llama_cpp()
         
         unet_path = Path(unet_path)
         if not unet_path.exists():
