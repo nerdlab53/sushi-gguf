@@ -11,6 +11,8 @@ class ConvertAndQuantize:
         self.model_path = model_path
         self.gguf_dir = Path(model_path).parent / "gguf"
         self.gguf_dir.mkdir(exist_ok=True)
+        self.quantized_dir = Path(model_path).parent / "quantized"
+        self.quantized_dir.mkdir(exist_ok=True)
         self.llama_cpp = SetupLLamaCpp()
 
     def convert_to_gguf(self, unet_path, setup_llama_cpp=True):
