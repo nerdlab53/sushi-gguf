@@ -16,5 +16,5 @@ def display_banner():
     """
     
     # Display the banner with mint green color that matches the image
-    console.print(banner, style="bold spring_green1")
+    console.print(banner)
     console.print("\n") 
