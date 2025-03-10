@@ -11,6 +11,18 @@ SUSHI-GGUF is a tool that helps you:
 - Convert UNet to GGUF format for optimized inference
 - Create quantized versions with reduced precision
 
+## Setup
+
+```bash
+git clone --recursive https://github.com/nerdlab53/sushi-gguf.git
+cd sushi-gguf
+conda create -n sushi-gguf python=3.10
+conda activate sushi-gguf
+pip install -r requirements.txt
+
+```
+
+
 ## Usage
 
 **Convert local model**
