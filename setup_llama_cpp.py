@@ -53,7 +53,7 @@ class SetupLLamaCpp:
         # Apply the patch (make non-fatal)
         logging.info("Applying patch to llama.cpp...")
         try:
-            subprocess.run(["git", "checkout", "tags/b3600"], check=True)
+            subprocess.run(["git", "checkout", "tags/b3962"], check=True)
             # Try to apply the patch, but don't error if it fails
             subprocess.run(["git", "apply", "lcpp.patch"],  check=True)
         except Exception as e:
